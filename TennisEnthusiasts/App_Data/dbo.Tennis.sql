@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Table]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [Winner] NVARCHAR(50) NOT NULL, 
+    [RunnerUp] NVARCHAR(50) NOT NULL, 
+    [TriumphDate] DATETIME NOT NULL
+)

@@ -1,0 +1,50 @@
+﻿@model TennisEnthusiasts.Models.GrandSlam
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>GrandSlam</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Winner)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Winner)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RunnerUp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RunnerUp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TriumphDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TriumphDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
