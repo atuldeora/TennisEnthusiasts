@@ -28,11 +28,13 @@ namespace TennisEnthusiasts.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             GrandSlam grandSlam = db.GrandSlams.Find(id);
             if (grandSlam == null)
             {
                 return HttpNotFound();
             }
+            //Returning View with ID = Id passed as parameter in URL
             return View(grandSlam);
         }
 
@@ -65,6 +67,7 @@ namespace TennisEnthusiasts.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            //Returning Record with ID = Id passed as parameter in URL
             GrandSlam grandSlam = db.GrandSlams.Find(id);
             if (grandSlam == null)
             {
@@ -78,6 +81,7 @@ namespace TennisEnthusiasts.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Winner,RunnerUp,Title,TriumphDate")] GrandSlam grandSlam)
         {
+            //Checking for ModelState validity
             if (ModelState.IsValid)
             {
                 db.Entry(grandSlam).State = EntityState.Modified;
@@ -108,6 +112,7 @@ namespace TennisEnthusiasts.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             GrandSlam grandSlam = db.GrandSlams.Find(id);
+            //Deleting Record with ID = Id passed as parameter in URL
             db.GrandSlams.Remove(grandSlam);
             db.SaveChanges();
             return RedirectToAction("Index");
